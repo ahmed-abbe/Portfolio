@@ -1,0 +1,80 @@
+* {
+    background-color: #4277c2;
+    color: white; 
+}
+.fa-solid, 
+.fa-g {
+    float: left;
+    padding: 10px;
+    font-size: 40px;
+    color: #093c72;
+    position: static;
+}
+span {
+    font-size: 20px;
+    color: #093c72
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    position: static;
+}
+li { 
+    float: left;
+}
+li a{
+    margin-top: 15px;
+    padding: 16px;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+}
+li a:hover {
+    color: #093c72;
+}
+.welcome {
+    display: inline-block;
+}
+.first-welcome {
+    font-size: 16px;
+    font-weight: 400;
+    margin-top: 150px;
+    text-indent: 70px;   
+    letter-spacing: 2px;
+}
+.secound-welcome {
+    display: inline-block;
+    font-size: 60px;
+    margin-bottom: 10px;
+    margin-top: 2px;
+    text-indent: 70px;
+}
+.third-welcome {
+    font-size: 24px;
+    font-weight: 300;    
+    margin-top: 10px;
+    text-indent: 70px;
+}
+.fa-facebook {
+    margin-left: 65px;
+    font-size: 40px;
+}
+.fa-whatsapp {
+    margin-left: 5px;
+    font-size: 40px;
+}
+.my-work {
+    width: 170px;
+    margin: 30px 0 0 60px;
+    padding: 15px;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px #4277c2 soild;
+    background: linear-gradient(to right, blue, transparent)blueviolet;
+    transition: background-color 1s;
+}
+.my-work:hover{
+    background: linear-gradient( to right, blueviolet, transparent)blue;
+}
