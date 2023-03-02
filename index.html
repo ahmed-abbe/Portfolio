@@ -1,11 +1,151 @@
 <!DOCTYPE html>
-    <html>
-        <head>
-            <meta charset="utf-8">
-            <title>My Prot</title>
-            <link rel="stylesheet" href="CSS/Master.css">
-        </head>
-        <body>
-            <div></div>
-        </body>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>My Portfolio</title>
+        <!-- Main CSS File -->
+        <link rel="stylesheet" href="CSS/Master.css">
+        <!-- Render All Elments Normally -->
+        <link rel="stylesheet" href="CSS/Normalize.css">
+        <!-- Font Awesome-->
+        <link rel="stylesheet" href="CSS/all.min.css">
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link 
+            href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500;600;700;800&display=swap" 
+            rel="stylesheet"
+        />
+    </head>
+    <body>
+        <!-- Start Header -->
+        <header>
+            <div class="container">
+                <div class="logo"><i class="fa-solid fa-code"></i>AM</div>
+                <nav>
+                    <span class="icons">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </span>
+                    <ul>
+                        <li><a href="#About">About</a></li>
+                        <li><a href="#Projects">Projects</a></li>
+                        <li><a href="#Resume">Resume</a></li>
+                        <li><a href="#Contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <!-- End Header -->
+        <!-- Start Landing Section -->
+        <section id="About" class="landing container">
+            <div class="intro-text">
+                <p>Welcome to my portfolio!</p>
+                <h1>Hey there, I'm Ahmed</h1>
+                <p>
+                    I'm a front-end developer, I'm also a student in faculty of specific 
+                    education Mansoura university,I'm at computer science major in the university, 
+                    I always learn and work hard to imporve myself.
+                </p>
+                <a href="#" class="btn prime"><i class="fa-sharp fa-solid fa-file"></i> Get Resume</a>
+                <a href="#" class="btn secondry">Get a free quote</a>
+            </div>
+            <div class="image-logo">
+                <img src="imgs//Black logo - no background.png" alt="My Logo">
+            </div>
+        </section>
+        <!-- End Landing Section -->
+        <!-- Start Projects Section -->
+        <section id="Projects" class="project container">
+            <div class="special-heading">
+                <h1>Here you can see some of my work</h1>
+            </div>
+            <div class="image">
+                <img src="imgs/my work.png" alt="my work">
+                <span class="prev">&#10094;</span>
+                <span class="next">&#10095;</span>
+            </div>
+        </section>
+        <!-- ُEnd Projects Section -->
+        <!-- Start Resume Section -->
+        <section id="Resume" class="resume container">
+            <div class="parent">
+                <div class="educ">
+                    <h2>Education</h2>
+                    <div year="2021">
+                        High School
+                        <p>I Join high school in 2018 and finish it in 2021</p>
+                    </div>
+                    <div year="2022">
+                        Web development
+                        <p>
+                            I start learn web development in 2022 via youtube, some websites and practice. And i'm still
+                            learning since 2022
+                        </p>
+                    </div>
+                    <div year="2025">
+                        University
+                        <p>
+                            I Join faculty of specific education Mansoura university in 2021 and i will finish in 2025.
+                            I'm studying computer science there. And i got 4.0 Gpa in my certificate 
+                        </p>
+                    </div>
+                </div>
+                <div class="exp">
+                    <h2>Experiences</h2>
+                    <div year="2023">
+                        Front-end freelancer
+                        <p>
+                            I started yo work freelancer in 2023 till now so i can practice more and understand the needs of clients
+                            and how can i make them pleased and satisfied of my work, also that is helping me to keep myself always 
+                            up on date at trending 
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Resume Section -->
+        <!-- Start Contact Section -->
+        <section id="Contact" class="contact container">
+            <div class="special-heading">
+                <h1>Interested to work together? Feel free to talk to me anytime</h1>
+            </div>
+            <div class="parent">
+                <div class="text-gmail">
+                    <h2>Text me via gmail</h2>
+                    <a href="mailto:ahmedgafar932@gmail.com">ahmedgafar932@gmail.com</a>
+                </div>
+                <div class="text-form">
+                    <h2>Text me via my website</h2>
+                    <form>
+                        <label for="name">Name</label>
+                        <input id="name" type="text" placeholder="Your name" required name="name">
+                        <label for="email">Email</label>
+                        <input id="email" type="email" placeholder="Email" required name="email">
+                        <label for="msg">Message</label>
+                        <textarea id="msg" name="msg" required rows="8" placeholder="Message"></textarea>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <!-- End Contact Section -->
+        <!-- Start Footer -->
+        <footer>
+            <div class="parent container">
+                <div class="copyright">
+                    Made with <i class="fa-solid fa-heart"></i> by Ahmed
+                </div>
+                <div class="social-media">
+                    <a href="" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="" target="_blank"><i class="fa-brands fa-github"></i></a>
+                    <a href="" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+        </footer>
+        <!-- End Footer -->
+    </body>
     </html>
