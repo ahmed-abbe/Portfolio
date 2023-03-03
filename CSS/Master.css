@@ -1,6 +1,9 @@
 /* Start Variables */
 :root {
-
+    --maincolor: #0d1018;
+    --secondrycolor: #2488d8;
+    --font-color: #fefcf8;
+    --mainpadding: 80px;
 }
 /* End Variables */
 /* Start Global Rules */
@@ -11,8 +14,18 @@
     -o-box-sizing: border-box;
     box-sizing: border-box;
 }
+html {
+    -webkit-scroll-behavior: smooth;
+    -moz-scroll-behavior: smooth;
+    -ms-scroll-behavior: smooth;
+    -o-scroll-behavior: smooth;
+    scroll-behavior: smooth
+}
 body {
     font-family: 'Maven Pro', sans-serif;
+    background-color: var(--maincolor);
+    color: var(--font-color);
+    caret-color: var(--secondrycolor);
 }
 .container {
     padding-left: 15px;
@@ -46,8 +59,8 @@ body {
     font-weight: 800;
 }
 section {
-    padding-top: 80px;
-    padding-bottom: 80px;
+    padding-top: var(--mainpadding);
+    padding-bottom: var(--mainpadding);
 }
 [placeholder] {
     font-size: 20px;
@@ -78,7 +91,7 @@ header .container .logo {
     display: flex;
     align-items: center;
     font-size: 50px;
-    color: black
+    cursor: pointer;
 }
 header .container i {
     font-size: 25px;
@@ -99,6 +112,10 @@ header nav ul li {
     display: inline-block;
     margin-left: 15px;
 }
+header .container .logo:hover,
+header nav UL a:hover{
+    color: var(--secondrycolor);
+}
 @media (max-width: 767px) {
     header nav .icons {
         width: 30px;
@@ -112,7 +129,7 @@ header nav ul li {
     header nav .icons span {
         height: 3px;
         margin-bottom: 5px;
-        background-color: #333;
+        background-color: var(--font-color);
     }
     header nav .icons span:first-child {
         width: 100%;
@@ -124,12 +141,15 @@ header nav ul li {
     header nav .icons span:last-child {
         width: 100%;
     }
+    header nav .icons:hover span {
+        background-color: var(--secondrycolor)
+    }
     header nav ul {
         position: absolute;
         list-style: none;
         padding: 0; 
         margin: 0;
-        background-color: #EEE;
+        background-color: var(--secondrycolor);
         min-width: 200px;
         top: calc(100% + 10px);
         right: 0;
@@ -140,7 +160,7 @@ header nav ul li {
         content: '';
         border: 10px solid;
         position: absolute;
-        border-color: transparent transparent #EEE;
+        border-color: transparent transparent var(--secondrycolor);
         right: 5px;
         top: -19px;
     }
@@ -149,15 +169,18 @@ header nav ul li {
     }
     header nav ul a {
         display: block;
-        color: unset;
+        color: #272727;
+        font-size: 20px;
         text-decoration: none;
         padding: 15px;
         transition: .3s;
     }
     header nav ul li {
         display: block;
+        margin-left: 0;
     }
     header nav ul a:hover {
+        color: white;
         padding-left: 40px;
     }
     header nav ul li:not(:last-child) {
@@ -169,7 +192,7 @@ header nav ul li {
 .landing {
     display: flex;
     justify-content: space-evenly;
-    padding-bottom: 80px;
+    padding-bottom: var(--mainpadding);
 }
 .landing .intro-text{
     width: 600px;
@@ -178,7 +201,6 @@ header nav ul li {
 }
 .landing .intro-text p:first-child {
     font-size: 18px;
-    color: #777;
     font-weight: lighter;
 }
 .landing .intro-text h1 {
@@ -202,9 +224,16 @@ header nav ul li {
     color: black;
     background-color: #EEE;
 }
+.landing .intro-text .btn.prime:hover {
+    color: var(--secondrycolor)
+}
 .landing .intro-text .btn.secondry {
     color: #EEE;
     background-color: #333;
+    padding: 15px 65px;
+}
+.landing .intro-text .btn.secondry:hover {
+    background-color: var(--secondrycolor);
 }
 @media (max-width: 750px) {
     .landing .intro-text .btn {
@@ -240,7 +269,7 @@ header nav ul li {
 }
 .project .image img {
     width: 100%;
-    box-shadow: 0 0 30px 15px #bbb;
+    box-shadow: 0 0 30px 15px #3c3c3c;;
 }
 .project .image .prev, 
 .project .image .next {
@@ -251,6 +280,7 @@ header nav ul li {
     padding: 15px;
     font-weight: bold;
     top: 50%;
+    color: var(--maincolor);
     -webkit-transform: translateY(-50%);
     -moz-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
@@ -268,7 +298,7 @@ header nav ul li {
 }
 .project .image .prev:hover, 
 .project .image .next:hover {
-    background-color: #606060;
+    background-color: #505050;
     color: white;
 }
 @media (max-width: 950px) {
@@ -322,8 +352,8 @@ header nav ul li {
     justify-content: center;
     align-items: center;
     margin-right: 15px;
-    background-color: black;
-    color: white;
+    background-color: var(--secondrycolor);
+    color: var(--font-color);
     font-size: 20px;
     border-radius: 50%;
     z-index: 1;
@@ -341,7 +371,7 @@ header nav ul li {
     height: 100%;
     width: 3px;
     right: 100%;
-    background-color: black;
+    background-color: var(--secondrycolor);
     margin-right: 52px;
 }
 /* End Resume Section */
@@ -352,65 +382,36 @@ header nav ul li {
     gap: 30px 0;
 }
 .contact .parent > div > h2:first-child {
-    padding-left: 10px;
     font-size: 30px;
     margin-top: 0;
+    text-align: center;
 }
-.contact .parent .text-gmail, 
-.contact .parent .text-form {
+.contact .parent .text-gmail {
     position: relative;
-}
-.contact .parent .text-gmail::after {
-    content: '';
-    width: 75%;
-    height: 3px;
-    background-color: black;
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-    -moz-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    -o-transform: translateX(-50%);
-    transform: translateX(-50%);
-}
-.contact .parent .text-form::before {
-    content: 'Or';
-    width: 65px;
-    height: 65px;
-    font-size: larger;
-    font-weight: bold;
-    border-radius: 50%;
-    background-color: black;
-    color: white;
-    position: absolute;
-    bottom: 100%;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-    -moz-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    -o-transform: translateX(-50%);
-    transform: translateX(-50%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 .contact .parent .text-gmail a {
     text-align: center;
     font-size: 25px;
-    padding: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
     text-decoration: none;
-    color: black;
-    margin-bottom: 10px;
+    color: var(--font-color);
+    font-weight: bold;
+    margin-top: 15px;
+    margin-bottom: 30px;
 }
+.contact .parent .text-gmail a:hover {
+    color: var(--secondrycolor)
+}   
 .contact .parent .text-form label{
     display: inline-block;
     font-size: 25px;
     margin-bottom: 10px;
     margin-left: 5px;
+}
+.contact .parent .text-form label:hover {
+    color: var(--secondrycolor)
 }
 .contact .parent .text-form input {
     width: 100%;
@@ -420,16 +421,18 @@ header nav ul li {
 .contact .parent .text-form textarea {
     width: 100%;
 }
+.contact .parent .text-form input:focus,
+.contact .parent .text-form textarea:focus {
+    border-color:var(--secondrycolor);
+    outline: none;
+}
 @media (min-width: 767px) {
     .contact .parent {
         grid-template-columns: repeat(2, 1fr);
         gap: 0
     }
-    .contact .parent .text-gmail::after {
-        display: none;
-    }
-    .contact .parent .text-form::before {
-        display: none;
+    .contact .parent > div > h2:first-child {
+        text-align: left;
     }
     .contact .parent .text-form form {
         display: grid;
@@ -444,6 +447,8 @@ header nav ul li {
         grid-column: 1 / -1;
     }
     .contact .parent .text-gmail a {
+        padding: 30px;
+        margin: 0;
         position: absolute;
         top: 50%;
         left: 0;
@@ -453,14 +458,22 @@ header nav ul li {
 /* End Contact Section */
 /* Start Footer */
 footer {
-    background-color: black;
-    color: white;
+    background-color: var(--secondrycolor);
+    color: var(--font-color);
 } 
 footer .parent {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    flex-wrap: wrap-reverse;
     align-items: center;
     padding: 10px;
+}
+footer .parent .copyright {
+    cursor: pointer;
+    padding: 10px;
+}
+footer .parent .copyright:hover {
+    color: var(--maincolor)
 }
 footer .parent .copyright .fa-heart {
     color: red
@@ -473,18 +486,26 @@ footer .parent .social-media i {
 }
 footer .parent .social-media a:hover i {
     border-radius: 50%;
-    color: white
+    color: var(--font-color)
 }
 footer .parent .social-media a:first-of-type:hover i {
-    background-color: rgb(0, 132, 255);
+    background-color: #3b5998;
 }
 footer .parent .social-media a:nth-of-type(2):hover i {
-    background-color: rgb(0, 72, 255);
+    background-color: #0072b1;
 }
 footer .parent .social-media a:nth-of-type(3):hover i {
     background-color: rgb(79, 79, 79);
 }
-footer .parent .social-media a:last-of-type:hover i {
+footer .parent .social-media a:nth-of-type(4):hover i {
     background-image: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+}
+footer .parent .social-media a:last-of-type:hover i {
+    background-color: #2bb15d;	
+}
+@media (min-width: 767px) {
+    footer .parent {
+        justify-content: space-between;
+    }
 }
 /* End Footer*/
