@@ -27,6 +27,18 @@ body {
     color: var(--font-color);
     caret-color: var(--secondrycolor);
 }
+body::-webkit-scrollbar {
+    width: 1em;
+}
+body::-webkit-scrollbar-track {
+    background-color: var(--secondrycolor);
+}
+body::-webkit-scrollbar-thumb {
+    background-color: var(--font-color);
+}
+body::-webkit-scrollbar-thumb:hover {
+    background-color: #CCC;
+}
 .container {
     padding-left: 15px;
     padding-right: 15px;
@@ -273,6 +285,7 @@ header nav UL a:hover{
 }
 .project .image .prev, 
 .project .image .next {
+    display: none;
     cursor: pointer;
     position: absolute;
     font-size: 20px;
