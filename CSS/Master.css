@@ -439,6 +439,22 @@ header nav UL a:hover{
     border-color:var(--secondrycolor);
     outline: none;
 }
+.contact .parent .text-form .send {
+    width: 100%;
+    height: 60px;
+    color: #EEE;
+    background-color: #333;
+    border: none;
+    border-radius: 40px;
+    margin-top: 10px;
+    margin-bottom: -10px;
+    font-size: 25px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.contact .parent .text-form .send:hover {
+    background-color: var(--secondrycolor)
+}
 @media (min-width: 767px) {
     .contact .parent {
         grid-template-columns: repeat(2, 1fr);
@@ -458,6 +474,9 @@ header nav UL a:hover{
     }
     .contact .parent .text-form textarea {
         grid-column: 1 / -1;
+    }
+    .contact .parent .text-form .send {
+        grid-column: 2 / -1;
     }
     .contact .parent .text-gmail a {
         padding: 30px;
