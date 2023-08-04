@@ -1,25 +1,34 @@
 <!DOCTYPE html>
-    <html lang="en">
+<html lang="en">
     <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>AM</title>
+        <!-- Open Graph Meta -->
+        <meta property="og:title" content="Ahmed portfolio" />
+        <meta
+            property="og:description"
+            content="Hey there, I'm Ahmed I am a front-end developer and a student at the Faculty of Specific Education, Mansoura University. I am majoring in computer science, and I am always learning and working hard to improve myself."
+        />
+        <meta property="og:image" content="./imgs/logo.png" />
         <!-- Main CSS File -->
-        <link rel="stylesheet" href="CSS/Master.css">
+        <link rel="stylesheet" href="CSS/Master.css" />
+        <!-- CSS Style For White Mode -->
+        <link rel="stylesheet" href="CSS/main-white.css" />
         <!-- Render All Elments Normally -->
-        <link rel="stylesheet" href="CSS/Normalize.css">
+        <link rel="stylesheet" href="CSS/Normalize.css" />
         <!-- Font Awesome-->
-        <link rel="stylesheet" href="CSS/all.min.css">
+        <link rel="stylesheet" href="CSS/all.min.css" />
         <!-- Google Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link 
-            href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500;600;700;800&display=swap" 
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500;600;700;800&display=swap"
             rel="stylesheet"
         />
         <!-- My fav icon -->
-        <link rel="icon" type="image/x-icon" href="imgs/White logo - no background.png">
+        <link rel="icon" type="image/x-icon" href="imgs/coding.png" />
     </head>
     <body>
         <!-- Start Header -->
@@ -33,11 +42,19 @@
                         <span></span>
                     </span>
                     <ul>
-                        <li><a href="#About">About</a></li>
-                        <li><a href="#Projects">Projects</a></li>
-                        <li><a href="#Resume">Resume</a></li>
-                        <li><a href="#Contact">Contact</a></li>
+                        <li data-name="About"><a href="#About">About</a></li>
+                        <li data-name="Projects">
+                            <a href="#Projects">Projects</a>
+                        </li>
+                        <li data-name="Resume"><a href="#Resume">Resume</a></li>
+                        <li data-name="Contact">
+                            <a href="#Contact">Contact</a>
+                        </li>
                     </ul>
+                    <label>
+                        <input type="checkbox" id="color-mode" />
+                        <div></div>
+                    </label>
                 </nav>
             </div>
         </header>
@@ -48,15 +65,18 @@
                 <p>Welcome to my portfolio!</p>
                 <h1>Hey there, I'm Ahmed</h1>
                 <p>
-                    I'm a front-end developer, I'm also a student in faculty of specific 
-                    education Mansoura university,I'm at computer science major in the university, 
-                    I always learn and work hard to imporve myself.
+                    I am a front-end developer and a student at the Faculty of
+                    Specific Education, Mansoura University. I am majoring in
+                    computer science, and I am always learning and working hard
+                    to improve myself.
                 </p>
-                <a href="#Resume" class="btn prime"><i class="fa-sharp fa-solid fa-file"></i> Get Resume</a>
+                <a href="#Resume" class="btn prime"
+                    ><i class="fa-sharp fa-solid fa-file"></i> Get Resume</a
+                >
                 <a href="#Contact" class="btn secondry">Hire me</a>
             </div>
             <div class="image-logo">
-                <img src="imgs/logo.png" alt="My Logo">
+                <img src="imgs/logo.png" alt="Software developer" />
             </div>
         </section>
         <!-- End Landing Section -->
@@ -65,10 +85,21 @@
             <div class="special-heading">
                 <h1>Here you can see some of my work</h1>
             </div>
-            <div class="image">
-                <img src="imgs/my-work1.png" alt="my work">
-                <span class="prev">&#10094;</span>
-                <span class="next">&#10095;</span>
+            <div class="images">
+                <img
+                    class="active"
+                    src="imgs/my-work1.png"
+                    alt="Space toursim"
+                />
+                <img src="imgs/my-work2.png" alt="Dashbored" />
+                <img src="imgs/my-work3.png" alt="portfolio" />
+                <span class="prev">
+                    <i class="fa-solid fa-arrow-left prev-arrow"></i>
+                </span>
+                <span class="next">
+                    <i class="fa-solid fa-arrow-right next-arrow"></i>
+                </span>
+                <ul class="bullets"></ul>
             </div>
         </section>
         <!-- ُEnd Projects Section -->
@@ -77,80 +108,92 @@
             <div class="parent">
                 <div class="educ">
                     <h2>Education</h2>
-                    <div year="2021">
-                        High School
-                        <p>I Join high school in 2018 and finish it in 2021</p>
-                    </div>
-                    <div year="2022">
+                    <div year="2023">
                         Web development
                         <p>
-                            I start learn web development in 2022 via youtube, some websites and practice. And i'm still
-                            learning since 2022
+                            Started learning web development in 2022 using
+                            online resources, such as YouTube and various
+                            websites.Have been practicing my skills by building
+                            personal projects and contributing to open-source
+                            projects.Am eager to learn more about web
+                            development and to apply my skills in a professional
+                            setting.
+                        </p>
+                    </div>
+                    <div year="2023">
+                        CS50
+                        <p>
+                            Learned the fundamentals of computer science,
+                            including data structures, algorithms, programming,
+                            and problem-solving. Completed projects using
+                            Python, SQL, HTML, CSS, and JavaScript. Gained a
+                            strong understanding of the fundamentals of computer
+                            science.
                         </p>
                     </div>
                     <div year="2025">
                         University
                         <p>
-                            I Join faculty of specific education Mansoura university in 2021 and i will finish in 2025.
-                            I'm studying computer science there.
+                            Enrolled in the Faculty of Specific Education at
+                            Mansoura University in 2021. Currently studying
+                            Computer Science and will graduate in 2025.
                         </p>
                     </div>
                 </div>
                 <div class="exp">
                     <h2>Experiences</h2>
-                    <div year="2023">
-                        Front-end developer freelancer
-                        <p>
-                            I started to work as freelancer in 2023 till now so i can practice more and understand the needs of clients
-                            and how can i make them pleased and satisfied of my work, also that is helping me to keep myself always 
-                            up to date with trending 
-                        </p>
-                    </div>
                 </div>
             </div>
         </section>
         <!-- End Resume Section -->
         <!-- Start Contact Section -->
-        <section id="Contact" class="contact container">
+        <section id="Contact" class="contact">
             <div class="special-heading">
-                <h1>Interested to work together? Feel free to talk to me anytime</h1>
+                <h1>Interested to work together? Let's talk</h1>
             </div>
-            <div class="parent">
-                <div class="text-gmail">
-                    <h2>Text me via gmail</h2>
-                    <a href="mailto:ahmedgafar932@gmail.com">ahmedgafar932@gmail.com</a>
+            <div class="container">
+                <div class="gmail">
+                    <h2>Feel free to drop a message anytime</h2>
+                    <a href="mailto:ahmedmohamed3615@gmail.com">
+                        ahmedmohamed3615@gmail.com
+                    </a>
                 </div>
-                <div class="text-form">
-                    <h2>Text me via my website</h2>
-                    <form action="https://formsubmit.co/2022d2e52650582b814db10d7b6cc129" method="post">
-                        <input type="hidden" name="_subject" value="New email">
-                        <label for="name">Name</label>
-                        <input id="name" type="text" placeholder="Your name" required name="name">
-                        <label for="email">Email</label>
-                        <input id="email" type="email" placeholder="Email" required name="email">
-                        <label for="msg">Message</label>
-                        <textarea id="msg" name="msg" required rows="8" placeholder="Message"></textarea>
-                        <input class="send" type="submit" value="Send button">
-                    </form>
+                <div class="social-media">
+                    <a
+                        href="https://www.facebook.com/profile.php?id=100004170797214"
+                        target="_blank"
+                        ><i class="fa-brands fa-facebook"></i
+                    ></a>
+                    <a
+                        href="https://www.linkedin.com/in/ahmed-gafar-791857251/"
+                        target="_blank"
+                        ><i class="fa-brands fa-linkedin"></i
+                    ></a>
+                    <a href="https://github.com/ahmed-abbe" target="_blank"
+                        ><i class="fa-brands fa-github"></i
+                    ></a>
+                    <a
+                        href="https://instagram.com/ahmed_gafar03?igshid=NmQ2ZmYxZjA="
+                        target="_blank"
+                        ><i class="fa-brands fa-instagram"></i
+                    ></a>
+                    <a href="https://wa.me/+201066295454" target="_blank"
+                        ><i class="fa-brands fa-whatsapp"></i
+                    ></a>
                 </div>
             </div>
         </section>
         <!-- End Contact Section -->
         <!-- Start Footer -->
         <footer>
-            <div class="parent container">
+            <div class="container">
                 <div class="copyright">
                     Made with <i class="fa-solid fa-heart"></i> by Ahmed
-                </div>
-                <div class="social-media">
-                    <a href="https://www.facebook.com/profile.php?id=100004170797214" target="_blank"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="https://www.linkedin.com/in/ahmed-gafar-791857251/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-                    <a href="https://github.com/ahmed-abbe" target="_blank"><i class="fa-brands fa-github"></i></a>
-                    <a href="https://instagram.com/ahmed_gafar03?igshid=NmQ2ZmYxZjA=" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://wa.me/+201066295454" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
                 </div>
             </div>
         </footer>
         <!-- End Footer -->
+        <!-- Add the JS File -->
+        <script src="main.js"></script>
     </body>
-    </html>
+</html>
