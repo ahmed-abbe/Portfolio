@@ -11,10 +11,6 @@
             property="og:description"
             content="Hey there, I'm Ahmed I am a front-end developer and a student at the Faculty of Specific Education, Mansoura University. I am majoring in computer science, and I am always learning and working hard to improve myself."
         />
-        <meta
-            property="og:image"
-            content="https://img.freepik.com/free-vector/professional-programmer-engineer-writing-code_3446-693.jpg?w=740&t=st=1691219322~exp=1691219922~hmac=7a39eb54f9cdb60172d56b01d48b7f46c973fd221e06dc2e2d67928a652fb83d"
-        />
         <!-- Main CSS File -->
         <link rel="stylesheet" href="CSS/Master.css" />
         <!-- CSS Style For White Mode -->
@@ -63,7 +59,7 @@
         </header>
         <!-- End Header -->
         <!-- Start Landing Section -->
-        <section id="About" class="landing container">
+        <section id="About" class="landing container hidden">
             <div class="intro-text">
                 <p>Welcome to my portfolio!</p>
                 <h1>Hey there, I'm Ahmed</h1>
@@ -75,7 +71,7 @@
                 </p>
                 <a
                     href="Files/My Resmue.pdf"
-                    download="My Resume"
+                    download="Ahmed's Resume"
                     class="btn prime"
                     ><i class="fa-sharp fa-solid fa-file"></i> Get Resume</a
                 >
@@ -87,18 +83,16 @@
         </section>
         <!-- End Landing Section -->
         <!-- Start Projects Section -->
-        <section id="Projects" class="project container">
+        <section id="Projects" class="project container hidden">
             <div class="special-heading">
                 <h1>Here you can see some of my work</h1>
             </div>
             <div class="images">
-                <img
-                    class="active"
-                    src="imgs/my-work1.png"
-                    alt="Space toursim"
-                />
-                <img src="imgs/my-work2.png" alt="Dashbored" />
-                <img src="imgs/my-work3.png" alt="portfolio" />
+                <img class="active" src="imgs/my-work1.png" alt="Space Tour" />
+                <img src="imgs/my-work2.png" alt="Tenzi Game" />
+                <img src="imgs/my-work3.png" alt="Elzero World" />
+                <img src="imgs/my-work4.png" alt="Dashboard" />
+                <img src="imgs/my-work5.png" alt="Quiz App" />
                 <span class="prev">
                     <i class="fa-solid fa-arrow-left prev-arrow"></i>
                 </span>
@@ -112,12 +106,12 @@
         <!-- Start Resume Section -->
         <section id="Resume" class="resume container">
             <div class="parent">
-                <div class="educ">
+                <div class="educ hidden">
                     <h2>Education</h2>
                     <div year="2023">
-                        Web development
+                        Front End development
                         <p>
-                            Started learning web development in 2022 using
+                            Started learning Front End development in 2023 using
                             online resources, such as YouTube and various
                             websites.Have been practicing my skills by building
                             personal projects and contributing to open-source
@@ -146,14 +140,14 @@
                         </p>
                     </div>
                 </div>
-                <div class="exp">
+                <div class="exp hidden">
                     <h2>Experiences</h2>
                 </div>
             </div>
         </section>
         <!-- End Resume Section -->
         <!-- Start Contact Section -->
-        <section id="Contact" class="contact">
+        <section id="Contact" class="contact hidden">
             <div class="special-heading">
                 <h1>Interested to work together? Let's talk</h1>
             </div>

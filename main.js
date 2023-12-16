@@ -17,6 +17,20 @@ ChangeColor();
 
 colorMode.onchange = ChangeColor;
 
+// Create The Observer
+let observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("showen");
+            entry.target.classList.remove("hidden");
+        }
+    });
+});
+
+// Get All Sections with hidden class to add animation on scroll
+let hiddenElements = document.querySelectorAll(".hidden");
+hiddenElements.forEach((ele) => observer.observe(ele));
+
 // Get All Images In Project Section
 let images = [...document.querySelectorAll(".project img")];
 let imagesCount = images.length;
@@ -66,18 +80,45 @@ bulletsLi.forEach((bullet) => {
     };
 });
 
-// Change Image If the next button cliked
-function prevImage() {
-    if (count > 0) {
-        count--;
+// Get The Images Slider
+let slider = document.querySelector(".project .images");
+
+// Varaibles For Track Touch
+let startX,
+    endX,
+    dealtaX,
+    threhold = 100;
+
+// Add Touch Event For The Images Slider
+slider.addEventListener("touchstart", (e) => {
+    startX = e.touches[0].clientX;
+});
+
+slider.addEventListener("touchmove", (e) => {
+    endX = e.touches[0].clientX;
+    dealtaX = startX - endX;
+});
+
+slider.addEventListener("touchend", (e) => {
+    if (dealtaX > 0) {
+        updateCountPlus();
+        changeImage();
+    } else if (dealtaX < 0) {
+        updateCountMinus();
         changeImage();
     }
+    dealtaX = null;
+});
+
+/* Start Function */
+// Change Image If the next button cliked
+function prevImage(e) {
+    updateCountMinus();
+    changeImage();
 }
 function nextImage() {
-    if (count < imagesCount - 1) {
-        count++;
-        changeImage();
-    }
+    updateCountPlus();
+    changeImage();
 }
 
 // Change Image Function
@@ -111,4 +152,24 @@ function removeActive() {
     images.forEach((img) => img.classList.remove("active"));
 
     bulletsLi.forEach((bullet) => bullet.classList.remove("active"));
+}
+
+// Sub 1 From Count Value
+function updateCountMinus() {
+    if (count > 0) {
+        count--;
+    } else if (count === 0) {
+        count = imagesCount - 1;
+    }
+}
+
+// Add 1 For Count Value
+function updateCountPlus() {
+    if (count < imagesCount - 1) {
+        count++;
+        changeImage();
+    } else if (count === imagesCount - 1) {
+        count = 0;
+        changeImage();
+    }
 }

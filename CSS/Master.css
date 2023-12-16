@@ -68,6 +68,18 @@ body::-webkit-scrollbar-thumb:hover {
         width: 1170px;
     }
 }
+.hidden {
+    opacity: 0;
+    overflow: hidden;
+    filter: blur(5px);
+    transform: translateX(-100%);
+}
+.showen {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+    transition: opacity 1s, transform 1s, filter 1s;
+}
 /* End Global Rules */
 /* Start Components */
 .special-heading h1 {
@@ -301,7 +313,12 @@ header .container .logo:hover {
 .landing {
     display: flex;
     justify-content: space-between;
-    padding-bottom: var(--mainpadding);
+    min-height: calc(100vh - 85px);
+}
+@media (max-width: 992px) {
+    .landing {
+        align-items: center;
+    }
 }
 .landing .intro-text {
     width: 750px;
@@ -381,6 +398,9 @@ header .container .logo:hover {
 }
 /* End Landing Section */
 /* Start Projects Section */
+.project {
+    padding-top: 0;
+}
 .project .images {
     width: 1000px;
     max-width: 100%;
@@ -397,6 +417,7 @@ header .container .logo:hover {
     position: absolute;
     width: 100%;
     opacity: 0;
+    box-shadow: 0 0 20px 0 var(--rich-black);
     -webkit-transition: opacity 0.5s;
     -moz-transition: opacity 0.5s;
     -ms-transition: opacity 0.5s;
@@ -483,6 +504,9 @@ header .container .logo:hover {
     color: var(--platinum);
     font-size: 50px;
     margin-bottom: 0;
+}
+.resume .parent .exp {
+    transition-delay: 200ms;
 }
 .resume .parent > div > div {
     font-size: 30px;
