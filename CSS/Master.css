@@ -505,8 +505,10 @@ header .container .logo:hover {
     font-size: 50px;
     margin-bottom: 0;
 }
-.resume .parent .exp {
-    transition-delay: 200ms;
+@media (min-width: 992px) {
+    .resume .parent .exp {
+        transition-delay: 200ms;
+    }
 }
 .resume .parent > div > div {
     font-size: 30px;
