@@ -505,11 +505,6 @@ header .container .logo:hover {
     font-size: 50px;
     margin-bottom: 0;
 }
-@media (min-width: 992px) {
-    .resume .parent .exp {
-        transition-delay: 200ms;
-    }
-}
 .resume .parent > div > div {
     font-size: 30px;
     position: relative;
@@ -601,20 +596,17 @@ header .container .logo:hover {
     -o-transition: 0.5s;
     transition: 0.5s;
 }
-.contact .social-media a:first-of-type:hover i {
-    background-color: #1877f2;
+.contact .social-media a {
+    text-decoration: none;
 }
-.contact .social-media a:nth-of-type(2):hover i {
+.contact .social-media a:nth-of-type(1):hover i {
     background-color: #0a66c2;
 }
-.contact .social-media a:nth-of-type(3):hover i {
+.contact .social-media a:nth-of-type(2):hover i {
     background-color: #333;
 }
-.contact .social-media a:nth-of-type(4):hover i {
-    background-color: #c13584;
-}
 .contact .social-media a:last-of-type:hover i {
-    background-color: #075e54;
+    background-color: #128c7e;
 }
 /* End Contact Section */
 /* Start Footer */
