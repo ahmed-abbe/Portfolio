@@ -62,24 +62,21 @@ body {
   transition: background-color 0.3s;
 }
 body.loader::before, body.loader::after {
-  opacity: 1;
-  z-index: 999999;
-}
-body::before {
   content: "";
   position: fixed;
-  height: 100%;
-  width: 100%;
-  background-color: #0880df;
-  opacity: 0;
+  z-index: 999999;
   -webkit-transition: opacity 1s;
   -moz-transition: opacity 1s;
   -ms-transition: opacity 1s;
   -o-transition: opacity 1s;
   transition: opacity 1s;
 }
-body::after {
-  content: "";
+body.loader::before {
+  height: 100%;
+  width: 100%;
+  background-color: #0880df;
+}
+body.loader::after {
   position: fixed;
   width: 70px;
   height: 70px;
@@ -91,12 +88,6 @@ body::after {
   margin: -35px 0 0 -35px;
   border-radius: 50%;
   animation: rotate 1s linear infinite;
-  opacity: 0;
-  -webkit-transition: opacity 1s;
-  -moz-transition: opacity 1s;
-  -ms-transition: opacity 1s;
-  -o-transition: opacity 1s;
-  transition: opacity 1s;
 }
 
 a {
@@ -182,7 +173,7 @@ button {
   top: 0;
   box-shadow: 0 0 20px 0px #bbb;
   background-color: white;
-  z-index: 11111;
+  z-index: 9999;
 }
 .header .container {
   display: flex;
@@ -266,10 +257,9 @@ button {
     flex-direction: column;
     align-items: flex-start;
     position: absolute;
-    padding: 10px;
     width: 250px;
     max-width: 100%;
-    height: calc(100vh - 80px);
+    height: 0;
     color: white;
     right: 0;
     top: 80px;
@@ -283,7 +273,9 @@ button {
     transition: 0.2s linear;
   }
   .header__nav__links.active {
+    height: calc(100vh - 80px);
     opacity: 1;
+    padding: 10px;
     z-index: 9999;
   }
 }

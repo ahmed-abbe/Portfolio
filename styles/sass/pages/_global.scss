@@ -27,34 +27,29 @@ body {
     &.loader {
         &::before,
         &::after {
-            opacity: 1;
+            content: "";
+            position: fixed;
             z-index: 999999;
+            @include prefixer(transition, opacity 1s);
         }
-    }
-    &::before {
-        content: "";
-        position: fixed;
-        height: 100%;
-        width: 100%;
-        background-color: $main-color;
-        opacity: 0;
-        @include prefixer(transition, opacity 1s);
-    }
-    &::after {
-        content: "";
-        position: fixed;
-        width: 70px;
-        height: 70px;
-        background-color: transparent;
-        border: 5px solid white;
-        border-right-color: transparent;
-        top: 50%;
-        left: 50%;
-        margin: -35px 0 0 -35px;
-        border-radius: 50%;
-        animation: rotate 1s linear infinite;
-        opacity: 0;
-        @include prefixer(transition, opacity 1s);
+        &::before {
+            height: 100%;
+            width: 100%;
+            background-color: $main-color;
+        }
+        &::after {
+            position: fixed;
+            width: 70px;
+            height: 70px;
+            background-color: transparent;
+            border: 5px solid white;
+            border-right-color: transparent;
+            top: 50%;
+            left: 50%;
+            margin: -35px 0 0 -35px;
+            border-radius: 50%;
+            animation: rotate 1s linear infinite;
+        }
     }
 }
 a {
