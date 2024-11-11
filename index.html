@@ -2,56 +2,66 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Portfolio</title>
-        <!-- Open Graph Meta -->
-        <meta property="og:title" content="Ahmed portfolio" />
-        <meta
-            property="og:description"
-            content="Hey there, I'm Ahmed I am a front-end developer and a student at the Faculty of Specific Education, Mansoura University. I am majoring in computer science, and I am always learning and working hard to improve myself."
-        />
-        <!-- Main CSS File -->
-        <link rel="stylesheet" href="CSS/Master.css" />
-        <!-- CSS Style For White Mode -->
-        <link rel="stylesheet" href="CSS/main-white.css" />
-        <!-- Render All Elments Normally -->
-        <link rel="stylesheet" href="CSS/Normalize.css" />
-        <!-- Font Awesome-->
-        <link rel="stylesheet" href="CSS/all.min.css" />
-        <!-- Google Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500;600;700;800&display=swap"
-            rel="stylesheet"
-        />
-        <!-- My fav icon -->
-        <link rel="icon" type="image/x-icon" href="imgs/coding.png" />
+        <link rel="icon" type="image/x-icon" href="images/icon.ico" />
+        <title>Ahmed portfolio</title>
+        <!-- Render all elements in the page normally -->
+        <link rel="stylesheet" href="styles/normalize.css" />
+        <!-- Owl carousel library (CSS) -->
+        <link rel="stylesheet" href="styles/owl.carousel.min.css" />
+        <link rel="stylesheet" href="styles/owl.theme.default.min.css" />
+        <!-- Wow library (CSS) -->
+        <link rel="stylesheet" href="styles/wow.css" />
+        <!-- Main CSS file -->
+        <link rel="stylesheet" href="styles/main.css" />
+        <!-- Font Awesome library (CSS) -->
+        <link rel="stylesheet" href="styles/all.min.css" />
+        <!-- Wow library (JS) -->
+        <script src="scripts/wow.min.js"></script>
+        <script>
+            new WOW().init();
+
+            window.addEventListener("load", () => {
+                document.body.classList.remove("loader");
+            });
+        </script>
     </head>
-    <body>
+    <body class="loader">
         <!-- Start Header -->
-        <header>
+        <header class="header">
             <div class="container">
-                <div class="logo"><i class="fa-solid fa-code"></i>AM</div>
-                <nav>
-                    <span class="icons">
+                <div class="header__logo">
+                    <img src="images/no-background-logo.png" alt="Logo" />
+                </div>
+                <nav class="header__nav">
+                    <div class="header__nav-hamburger">
                         <span></span>
                         <span></span>
                         <span></span>
-                    </span>
-                    <ul>
-                        <li data-name="About"><a href="#About">About</a></li>
-                        <li data-name="Projects">
-                            <a href="#Projects">Projects</a>
+                    </div>
+                    <ul class="header__nav__links">
+                        <li class="header__nav__link">
+                            <a href="#about" data-link="About">About</a>
                         </li>
-                        <li data-name="Resume"><a href="#Resume">Resume</a></li>
-                        <li data-name="Contact">
-                            <a href="#Contact">Contact</a>
+                        <li class="header__nav__link">
+                            <a href="#education" data-link="Education"
+                                >Education</a
+                            >
+                        </li>
+                        <li class="header__nav__link">
+                            <a href="#skills" data-link="Skills">Skills</a>
+                        </li>
+                        <li class="header__nav__link">
+                            <a href="#projects" data-link="Projects"
+                                >Projects</a
+                            >
+                        </li>
+                        <li class="header__nav__link">
+                            <a href="#contact" data-link="Contacts">Contacts</a>
                         </li>
                     </ul>
-                    <label>
-                        <input type="checkbox" id="color-mode" />
+                    <label class="theme-toggle">
+                        <input type="checkbox" />
                         <div></div>
                     </label>
                 </nav>
@@ -59,125 +69,355 @@
         </header>
         <!-- End Header -->
         <!-- Start Landing Section -->
-        <section id="About" class="landing container hidden">
-            <div class="intro-text">
-                <p>Welcome to my portfolio!</p>
-                <h1>Hey there, I'm Ahmed</h1>
-                <p>
-                    I am a front-end developer and a student at the Faculty of
-                    Specific Education, Mansoura University. I am majoring in
-                    computer science, and I am always learning and working hard
-                    to improve myself.
-                </p>
-                <a href="Files/My Resume.pdf" class="btn prime"
-                    ><i class="fa-sharp fa-solid fa-file"></i> Get Resume</a
-                >
-                <a href="#Contact" class="btn secondry">Hire me</a>
-            </div>
-            <div class="image-logo">
-                <img src="imgs/logo.png" alt="Software developer" />
+        <section class="landing">
+            <div class="container">
+                <div>
+                    <h1>Hi <span>,</span> I Am Ahmed Gafar <span>.</span></h1>
+                    <h2>Front end developer</h2>
+                    <a href="./files/Ahmed Mohamed Gafar.pdf">
+                        <button class="main-btn">Get resume</button>
+                    </a>
+                </div>
             </div>
         </section>
         <!-- End Landing Section -->
-        <!-- Start Projects Section -->
-        <section id="Projects" class="project container hidden">
-            <div class="special-heading">
-                <h1>Here you can see some of my work</h1>
-            </div>
-            <div class="images">
-                <img class="active" src="imgs/my-work1.png" alt="Space Tour" />
-                <img src="imgs/my-work3.png" alt="Elzero World" />
-                <img src="imgs/my-work4.png" alt="Dashboard" />
-                <img src="imgs/my-work5.png" alt="Quiz App" />
-                <span class="prev">
-                    <i class="fa-solid fa-arrow-left prev-arrow"></i>
-                </span>
-                <span class="next">
-                    <i class="fa-solid fa-arrow-right next-arrow"></i>
-                </span>
-                <ul class="bullets"></ul>
-            </div>
-        </section>
-        <!-- ُEnd Projects Section -->
-        <!-- Start Resume Section -->
-        <section id="Resume" class="resume container">
-            <div class="parent">
-                <div class="educ hidden">
-                    <h2>Education</h2>
-                    <div year="2023">
-                        Front End development
-                        <p>
-                            Started learning Front End development in 2023 using
-                            online resources, such as YouTube and various
-                            websites.Have been practicing my skills by building
-                            personal projects and contributing to open-source
-                            projects.Am eager to learn more about web
-                            development and to apply my skills in a professional
-                            setting.
-                        </p>
-                    </div>
-                    <div year="2023">
-                        CS50
-                        <p>
-                            Learned the fundamentals of computer science,
-                            including data structures, algorithms, programming,
-                            and problem-solving. Completed projects using
-                            Python, SQL, HTML, CSS, and JavaScript. Gained a
-                            strong understanding of the fundamentals of computer
-                            science.
-                        </p>
-                    </div>
-                    <div year="2025">
-                        University
-                        <p>
-                            Enrolled in the Faculty of Specific Education at
-                            Mansoura University in 2021. Currently studying
-                            Computer Science and will graduate in 2025.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- End Resume Section -->
-        <!-- Start Contact Section -->
-        <section id="Contact" class="contact hidden">
-            <div class="special-heading">
-                <h1>Interested to work together? Let's talk</h1>
-            </div>
+        <!-- Start About me Section -->
+        <section class="about wow slideInLeft" id="about">
+            <h1 class="main-heading">About me</h1>
             <div class="container">
-                <div class="gmail">
-                    <h2>Feel free to drop a message anytime</h2>
-                    <a href="mailto:ahmedmohamed3615@gmail.com">
-                        ahmedmohamed3615@gmail.com
-                    </a>
+                <div class="about__text">
+                    <p class="about__text__main">
+                        I specialize in front-end development, and I'm always
+                        striving to learn and improve my skills
+                    </p>
+                    <p class="about__text__sub">
+                        As a front-end developer, I bring your webpage designs
+                        to life, ensuring they are both user-friendly and
+                        trendy. With expertise in front-end technologies, I help
+                        transform your vision into reality, creating
+                        eye-catching websites that drive business growth and
+                        enhance user experience
+                    </p>
+                    <div class="about__text__container">
+                        <span>
+                            <p>Phone</p>
+                            <a href="tel:+201066295454">+201066295454</a>
+                        </span>
+                        <span>
+                            <p>Email</p>
+                            <a href="mailto:ahmedmohamed3615@gmail.com">
+                                ahmedmohamed3615@gmail.com
+                            </a>
+                        </span>
+                        <span>
+                            <p>GitHub</p>
+                            <a
+                                href="https://github.com/ahmed-abbe"
+                                target="_blank"
+                            >
+                                ahmed-abbe
+                            </a>
+                        </span>
+                    </div>
                 </div>
-                <div class="social-media">
-                    <a
-                        href="https://www.linkedin.com/in/ahmed-gafar-791857251/"
-                        target="_blank"
-                    >
-                        <i class="fa-brands fa-linkedin"></i>
-                    </a>
-                    <a href="https://github.com/ahmed-abbe" target="_blank">
-                        <i class="fa-brands fa-github"></i>
-                    </a>
-                    <a href="https://wa.me/+201066295454" target="_blank">
-                        <i class="fa-brands fa-whatsapp"></i>
-                    </a>
+                <div class="about__info">
+                    <div class="about__info__image">
+                        <img src="images/logo.png" alt="logo" />
+                    </div>
+                    <div class="about__info__socials">
+                        <a
+                            href="https://www.facebook.com/profile.php?id=61563082356023&mibextid=ZbWKwL"
+                            target="_blank"
+                        >
+                            <i
+                                class="fa-brands fa-facebook-f fa-fw facebook"
+                            ></i>
+                        </a>
+                        <a
+                            href="https://eg.linkedin.com/in/ahmed-gafar-791857251"
+                            target="_blank"
+                        >
+                            <i class="fa-brands fa-linkedin fa-fw linkedin"></i>
+                        </a>
+                        <a href="https://wa.me/+201066295454" target="_blank">
+                            <i class="fa-brands fa-whatsapp fa-fw whatsapp"></i>
+                        </a>
+                        <a
+                            href="https://youtube.com/@ahmedmohamed-fk2wb?si=tzEUk89WVVfJSZ7i"
+                            target="_blank"
+                        >
+                            <i class="fa-brands fa-youtube fa-fw youtube"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
-        <!-- End Contact Section -->
+        <!-- End About me Section -->
+        <!-- Start Education Section -->
+        <section class="education wow slideInRight" id="education">
+            <h1 class="main-heading">Education</h1>
+            <div class="container">
+                <div class="education__card">
+                    <span class="education__card__year">2021 - 2025</span>
+                    <p class="education__card__degree">
+                        bachelor of computer science
+                    </p>
+                    <p class="education__card__university">
+                        Mansoura University
+                    </p>
+                    <p class="education__card__info">
+                        Enrolled in the Faculty of Specific Education at
+                        Mansoura University in 2021. Currently studying Computer
+                        Science and will graduate in 2025
+                    </p>
+                </div>
+                <div class="education__card">
+                    <span class="education__card__year">2023</span>
+                    <p class="education__card__degree">
+                        Introduction to cs course
+                    </p>
+                    <p class="education__card__university">CS50</p>
+                    <p class="education__card__info">
+                        Learned the fundamentals of computer science, including
+                        data structures, algorithms, programming, and
+                        problem-solving. Completed projects using Python, SQL,
+                        HTML, CSS, and JavaScript. Gained a strong understanding
+                        of the fundamentals of computer science.
+                    </p>
+                </div>
+                <div class="education__card">
+                    <span class="education__card__year">2024</span>
+                    <p class="education__card__degree">
+                        Front end development scholarship
+                    </p>
+                    <p class="education__card__university">DEPI</p>
+                    <p class="education__card__info">
+                        Started learning Front End development in 2023 using
+                        online resources, such as YouTube and various
+                        websites.Have been practicing my skills by building
+                        personal projects and contributing to open-source
+                        projects.Am eager to learn more about web development
+                        and to apply my skills in a professional setting.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <!-- End Education Section -->
+        <!-- Start Skills Section -->
+        <section
+            class="skills wow slideInLeft"
+            data-wow-duration="2s"
+            id="skills"
+        >
+            <h1 class="main-heading">Skills</h1>
+            <div class="container">
+                <div class="skills__card">
+                    <div>
+                        <i class="fa-brands fa-html5 html"></i>
+                    </div>
+                    <p>html</p>
+                </div>
+                <div class="skills__card">
+                    <div>
+                        <i class="fa-brands fa-css3-alt css"></i>
+                    </div>
+                    <p>css</p>
+                </div>
+                <div class="skills__card">
+                    <div>
+                        <i class="fa-brands fa-square-js js"></i>
+                    </div>
+                    <p>JavaScript</p>
+                </div>
+                <div class="skills__card">
+                    <div>
+                        <i class="fa-brands fa-bootstrap bootstrap"></i>
+                    </div>
+                    <p>bootstrap</p>
+                </div>
+                <div class="skills__card">
+                    <div>
+                        <i class="fa-brands fa-sass sass"></i>
+                    </div>
+                    <p>sass</p>
+                </div>
+                <div class="skills__card">
+                    <div>
+                        <i class="fa-brands fa-react react"></i>
+                    </div>
+                    <p>react</p>
+                </div>
+                <div class="skills__card">
+                    <div>
+                        <i class="fa-brands fa-git git"></i>
+                    </div>
+                    <p>git</p>
+                </div>
+            </div>
+        </section>
+        <!-- End Skills Section -->
+        <!-- Start Projects Section -->
+        <section class="projects wow slideInRight" id="projects">
+            <h1 class="main-heading">projects</h1>
+            <div class="container">
+                <div class="owl-carousel owl-theme">
+                    <figure class="projects__card">
+                        <img src="images/project-1.png" alt="Mediplus" />
+                        <figcaption>
+                            <a
+                                href="https://ahmed-abbe.github.io/Template-Six/"
+                                target="_blank"
+                            >
+                                click here to view Mediplus demo
+                            </a>
+                            <span>
+                                Developed a responsive website focused on
+                                providing medical information and services.
+                                Utilizes HTML, CSS, and SCSS for a polished and
+                                user-friendly interface. Enhanced functionality
+                                with JavaScript for dynamic user interactions.
+                            </span>
+                        </figcaption>
+                    </figure>
+                    <figure class="projects__card">
+                        <img src="images/project-2.png" alt="Space tourism" />
+                        <figcaption>
+                            <a
+                                href="https://ahmed-abbe.github.io/Space-Toursim/"
+                                target="_blank"
+                            >
+                                click here to view Space tourism demo
+                            </a>
+                            <span>
+                                Developed a space tourism website that
+                                dynamically displays information by fetching
+                                data from a JSON file. Utilizes JavaScript to
+                                load and present space tourism data from JSON.
+                                Designed with HTML and CSS for a modern and
+                                appealing user experience.
+                            </span>
+                        </figcaption>
+                    </figure>
+                    <figure class="projects__card">
+                        <img src="images/project-3.png" alt="Quizzical" />
+                        <figcaption>
+                            <a
+                                href="https://ahmed-abbe.github.io/Quizzical/"
+                                target="_blank"
+                            >
+                                click here to view Quizzical demo
+                            </a>
+                            <span>
+                                An interactive quiz app that delivers five
+                                multiple-choice questions per round using the
+                                Open Trivia Database API. Integrates with Open
+                                Trivia Database API to fetch and display
+                                randomized questions. Provides instant feedback
+                                on answers with clear visual cues.
+                            </span>
+                        </figcaption>
+                    </figure>
+                    <figure class="projects__card">
+                        <img src="images/project-4.png" alt="Dashboard" />
+                        <figcaption>
+                            <a
+                                href="https://ahmed-abbe.github.io/Template-Five/"
+                                target="_blank"
+                            >
+                                click here to view Dashboard demo
+                            </a>
+                            <span>
+                                Dashboard Designed and developed a responsive
+                                admin dashboard with a clean, modern interface
+                                focused on readability and user-friendly
+                                navigation across multiple sections.
+                            </span>
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+        <!-- End Projects Section -->
+        <!-- Start Contact Me Section -->
+        <section class="contact wow bounceInUp" id="contact">
+            <h1 class="main-heading">Contact Me</h1>
+            <div class="container">
+                <h2 class="contact__heading">
+                    Feel free to contact me anytime
+                </h2>
+                <div class="contact__info">
+                    <div class="name">
+                        <h3>Ahmed Gafar</h3>
+                        <a>
+                            <i class="fa-solid fa-laptop-code"></i>
+                            Front-End Developer
+                        </a>
+                    </div>
+                    <div class="phone">
+                        <h3>Phone</h3>
+                        <a href="tel:+201066295454">
+                            <i class="fa-solid fa-phone"></i>
+                            +201066295454
+                        </a>
+                    </div>
+                    <div class="email">
+                        <h3>Email</h3>
+                        <a href="mailto:ahmedmohamed3615@gmail.com">
+                            <i class="fa-solid fa-envelope"></i>
+                            ahmedmohamed3615@gmail.com
+                        </a>
+                    </div>
+                </div>
+                <div class="contact__socials">
+                    <div class="facebook">
+                        <a
+                            href="https://www.facebook.com/profile.php?id=61563082356023&mibextid=ZbWKwL"
+                            target="_blank"
+                        >
+                            <i class="fa-brands fa-facebook-f fa-fw"></i>
+                        </a>
+                    </div>
+                    <div class="linkedin">
+                        <a
+                            href="https://eg.linkedin.com/in/ahmed-gafar-791857251"
+                            target="_blank"
+                        >
+                            <i class="fa-brands fa-linkedin-in fa-fw"></i>
+                        </a>
+                    </div>
+                    <div class="whatsapp">
+                        <a href="https://wa.me/+201066295454" target="_blank">
+                            <i class="fa-brands fa-whatsapp fa-fw"></i>
+                        </a>
+                    </div>
+                    <div class="github">
+                        <a href="https://github.com/ahmed-abbe" target="_blank">
+                            <i class="fa-brands fa-github fa-fw"></i>
+                        </a>
+                    </div>
+                    <div class="youtube">
+                        <a
+                            href="https://youtube.com/@ahmedmohamed-fk2wb?si=tzEUk89WVVfJSZ7i"
+                            target="_blank"
+                        >
+                            <i class="fa-brands fa-youtube fa-fw"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Contact Me Section -->
         <!-- Start Footer -->
         <footer>
-            <div class="container">
-                <div class="copyright">
-                    Made with <i class="fa-solid fa-heart"></i> by Ahmed
-                </div>
-            </div>
+            <p>Made with <i class="fa-solid fa-heart"></i> by Ahmed</p>
         </footer>
         <!-- End Footer -->
-        <!-- Add the JS File -->
-        <script src="main.js"></script>
+        <!-- Font Awesome library (JS) -->
+        <script src="scripts/all.min.js"></script>
+        <!-- Owl carousel library (JS) & jQuery -->
+        <script src="scripts/jquery-3.7.1.min.js"></script>
+        <script src="scripts/owl.carousel.min.js"></script>
+        <!-- Main JavaScript file -->
+        <script src="scripts/main.js" defer></script>
     </body>
 </html>

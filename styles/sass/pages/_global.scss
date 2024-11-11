@@ -1,0 +1,77 @@
+@use "../helpers/" as *;
+
+/* Strat Adding Fonts */
+@include add-fonts($font-name, $font-link, $font-weights, $font-format);
+/* End Adding Fonts */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+html::-webkit-scrollbar {
+    width: 1rem;
+}
+html::-webkit-scrollbar-thumb {
+    background-color: $main-color;
+}
+html::-webkit-scrollbar-track {
+    background-color: #eee;
+}
+body {
+    font-family: $font-name, "sans-serif";
+    overflow-x: hidden;
+    @include prefixer(transition, background-color 0.3s);
+    &.loader {
+        &::before,
+        &::after {
+            opacity: 1;
+            z-index: 999999;
+        }
+    }
+    &::before {
+        content: "";
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        background-color: $main-color;
+        opacity: 0;
+        @include prefixer(transition, opacity 1s);
+    }
+    &::after {
+        content: "";
+        position: fixed;
+        width: 70px;
+        height: 70px;
+        background-color: transparent;
+        border: 5px solid white;
+        border-right-color: transparent;
+        top: 50%;
+        left: 50%;
+        margin: -35px 0 0 -35px;
+        border-radius: 50%;
+        animation: rotate 1s linear infinite;
+        opacity: 0;
+        @include prefixer(transition, opacity 1s);
+    }
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+section {
+    padding-block: $section-padding;
+}
+
+@keyframes rotate {
+    100% {
+        @include prefixer(transform, rotate(360deg));
+    }
+}

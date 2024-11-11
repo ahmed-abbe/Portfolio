@@ -1,0 +1,20 @@
+@use "../helpers/" as *;
+
+button {
+    border: 0;
+    outline: 0;
+    width: fit-content;
+    max-width: 100%;
+    padding: 15px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.main-btn {
+    background-color: $main-color;
+    color: white;
+    @include prefixer(transition, background-color 0.3s);
+    &:hover {
+        background-color: $dark-main-color !important;
+    }
+}

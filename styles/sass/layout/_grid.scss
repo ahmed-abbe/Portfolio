@@ -1,0 +1,25 @@
+@use "../helpers/" as *;
+
+.container {
+    padding-inline: 15px;
+    margin-inline: auto;
+}
+
+// Small Screens
+@media (min-width: $min-medium) {
+    .container {
+        width: $small-screen;
+    }
+}
+// Medium Screens
+@media (min-width: $min-large) {
+    .container {
+        width: $medium-screen;
+    }
+}
+// large Screens
+@media (min-width: $max-large) {
+    .container {
+        width: $large-screen;
+    }
+}

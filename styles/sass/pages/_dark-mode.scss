@@ -1,0 +1,14 @@
+body.dark-mode {
+    background: black;
+    color: white;
+    header {
+        background: #222;
+        box-shadow: 0 0 10px 0px #aaa;
+    }
+    .main-heading {
+        color: white;
+    }
+    .education__card__degree::after {
+        border-color: black;
+    }
+}

@@ -1,0 +1,355 @@
+@use "../components/" as *;
+@use "../helpers/" as *;
+@use "../layout/" as *;
+
+/* Start Landing Section */
+section.landing {
+    padding: 0;
+    margin-bottom: 10px;
+    height: calc(100vh - 80px);
+    background-image: url("../images/background.jpg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    @media (max-width: $max-small) {
+        background-image: url("../images/background-portrait.jpg");
+    }
+    @include overlay();
+    .container {
+        height: 100%;
+        display: grid;
+        place-items: center;
+        color: white;
+        text-align: center;
+        text-transform: uppercase;
+        position: relative;
+        h1 {
+            font-size: 4em;
+            width: 100%;
+            max-width: 320px;
+            margin: 0;
+        }
+        span {
+            color: $main-color;
+        }
+        h2 {
+            font-weight: $normal;
+            margin-block: 25px 60px;
+        }
+        button {
+            padding: 20px 45px;
+            font-size: 20px;
+            border-radius: 6px;
+            font-weight: $medium;
+        }
+    }
+}
+/* End Landing Section */
+
+/* Start About me Section */
+.about {
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @media (max-width: $max-medium) {
+            flex-direction: column;
+            justify-content: center;
+        }
+    }
+    &__text {
+        @media (min-width: $min-large) {
+            flex-basis: 45%;
+        }
+        &__main {
+            line-height: 1.5;
+            font: {
+                size: 1.5rem;
+                weight: $medium;
+            }
+            margin: 0;
+        }
+        &__sub {
+            font-size: 18px;
+            line-height: 1.4;
+            color: #777;
+            margin-block: 30px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #aaa;
+        }
+        &__container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+            @media (max-width: $max-small) {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            span {
+                display: inline-block;
+                font-size: 14px;
+                p {
+                    font-weight: $bold;
+                    color: $main-color;
+                    margin-block: 0 10px;
+                }
+            }
+        }
+    }
+    &__info {
+        position: relative;
+        @media (min-width: $min-large) {
+            flex-basis: 50%;
+        }
+        @media (max-width: $max-medium) {
+            margin-top: 30px;
+        }
+        &__image {
+            img {
+                width: 100%;
+            }
+        }
+        &__socials {
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            padding: 15px;
+            width: 100%;
+            background-color: $main-color;
+            color: white;
+            bottom: 0;
+            left: 0;
+            a {
+                border: 2px solid white;
+                border-radius: 6px;
+                &:not(:last-of-type) {
+                    margin-right: 20px;
+                }
+                svg {
+                    font-size: 18px;
+                    padding: 5px;
+                }
+            }
+        }
+    }
+}
+/* End About me Section */
+
+/* Start Education Section */
+.education {
+    .container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        align-items: center;
+        row-gap: 20px;
+    }
+    &__card {
+        margin-bottom: auto;
+        &:last-of-type {
+            .education__card__degree::before {
+                width: 50%;
+            }
+        }
+        &__year {
+            font-weight: $medium;
+        }
+        &__degree {
+            color: $alt-text;
+            position: relative;
+            margin-block: 10px 0;
+            &::before {
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 1px;
+                bottom: 7px;
+                left: 0;
+                background-color: #ccc;
+            }
+            &::after {
+                content: "";
+                display: block;
+                width: 15px;
+                height: 15px;
+                margin-block: 20px;
+                background-color: $main-color;
+                border: 3px solid white;
+                border-radius: 50%;
+                position: relative;
+                z-index: 3;
+            }
+        }
+        &__university {
+            margin: 0;
+        }
+        &__info {
+            margin: 0;
+            width: 90%;
+            color: $alt-text;
+            line-height: 1.6;
+            font-size: 14px;
+        }
+    }
+}
+/* End Education Section */
+
+/* Start Skills Section */
+.skills {
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 30px 20px;
+    }
+    &__card {
+        flex: 200px 0 1;
+        text-align: center;
+        div {
+            display: grid;
+            place-items: center;
+            margin-inline: auto;
+            width: 150px;
+            height: 150px;
+            background-color: $black-bg;
+            border-radius: 50%;
+            @include prefixer(transition, background-color 0.3s);
+            &:hover {
+                background-color: $main-color;
+            }
+            svg {
+                font-size: 3rem;
+                color: white;
+            }
+        }
+        p {
+            margin-block: 10px 0;
+            text-transform: uppercase;
+            font-weight: $medium;
+        }
+    }
+}
+/* End Skills Section */
+
+/* Start Projects Section */
+.projects {
+    &__card {
+        margin: 0;
+        position: relative;
+        @media (max-width: $max-small) {
+            img {
+                height: 250px;
+            }
+        }
+        figcaption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background-color: rgba($black-bg, 0.8);
+            color: white;
+            padding: 15px;
+            line-height: 1.6;
+            font-size: 14px;
+            text-align: justify;
+            a {
+                display: block;
+                text-align: center;
+                margin-bottom: 5px;
+                font-weight: $medium;
+                font-size: 18px;
+            }
+            @media (max-width: $max-small) {
+                span {
+                    display: none;
+                }
+            }
+        }
+    }
+    .owl-nav button {
+        display: inline-grid !important;
+        place-items: center;
+        width: 40px;
+        height: 40px;
+        background-color: $main-color !important;
+        color: white !important;
+        font-weight: bold !important;
+        font-size: 25px !important;
+        border-radius: 50% !important;
+        @include prefixer(transition, background-color 0.3s);
+        &:hover {
+            background-color: $dark-main-color !important;
+        }
+    }
+    .owl-dots .active span {
+        background-color: $main-color !important;
+    }
+}
+/* End Projects Section */
+
+/* Start Contact Me Section */
+.contact {
+    .container {
+        text-align: center;
+    }
+    &__heading {
+        margin-block: 0 30px;
+        font-size: 2.2rem;
+        text-transform: capitalize;
+    }
+    &__info {
+        div {
+            margin-bottom: 25px;
+        }
+        h3 {
+            margin-block: 0 5px;
+        }
+        a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: $medium;
+            svg {
+                color: $main-color;
+                font-size: 18px;
+                margin-right: 3px;
+            }
+        }
+    }
+    &__socials {
+        margin-top: 35px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        div {
+            color: white;
+            font-size: 20px;
+            @include prefixer(transition, background-color 0.3s);
+            &:not(:last-of-type) {
+                margin-right: 10px;
+            }
+            &.facebook {
+                background-color: $facebook;
+            }
+            &.linkedin {
+                background-color: $linkedin;
+            }
+            &.whatsapp {
+                background-color: $whatsapp;
+            }
+            &.github {
+                background-color: $github;
+            }
+            &.youtube {
+                background-color: $youtube;
+            }
+        }
+        a {
+            display: block;
+            padding: 10px;
+            height: 100%;
+        }
+    }
+}
+/* End Contact Me Section */

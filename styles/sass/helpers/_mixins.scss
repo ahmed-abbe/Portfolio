@@ -1,0 +1,116 @@
+@use "./varaibles" as *;
+
+///
+/// add @font-face
+///
+/// @author Ahmed Gafar
+///
+/// @param {String} $name
+///     The name of the font
+/// @param {String} $link
+///     Link of the font
+/// @param {List} $weights
+///     the weight of the font as
+///         semibold 600, bold 700, etc...
+/// @param {String} $format
+///     The format of the font
+///
+/// @output
+/// ```css
+///     @font-face {
+///         font-family: <name>;
+///         font-style: <style>;
+///         font-weight: <weight{Integer}>;
+///         src: url("<link><weight{String}>")
+///     }
+/// ```
+///
+/// @example
+/// @include add-fonts("myfont", "./my-font", {semibold 600, bold 700}, ttf)
+///
+
+@mixin add-fonts($name, $link, $weights, $format) {
+    @each $weight, $num in $weights {
+        @font-face {
+            font-family: $name;
+            font-style: "normal";
+            font-weight: $num;
+            src: url("#{$link}#{$weight}.#{$format}");
+        }
+    }
+}
+
+///
+/// add overlay to the element
+///
+/// @author Ahmed Gafar
+///
+/// @param {String} $color
+///     The color of the overlay
+/// @param {Number} $opacity
+///     the opacity of the overlay
+///
+/// @output
+/// ```css
+///    selector {
+///         position: relative;
+///     }
+///    selector::before {
+///         content: '';
+///         position: absolute;
+///         width: 100%;
+///         height: 100%;
+///         background-color: rgba($color, $opacity);
+///     }
+/// ```
+///
+/// @example
+/// @include overlay(black, 0.6)
+///
+
+@mixin overlay($color: black, $opacity: 0.4) {
+    & {
+        position: relative;
+    }
+    &::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgba($color, $opacity);
+    }
+}
+
+///
+/// add prefixes to property
+///
+/// @author Ahmed Gafar
+///
+/// @param {String} $property
+///     The name of the property
+/// @param {String} $value
+///     value pf the property
+/// @param {List} $prefixes
+///     The name of the prifix
+///
+/// @output
+/// ```css
+///    selector {
+///         -webkit-property: value;
+///         -moz-property: value;
+///         -ms-property: value;
+///         -o-property: value;
+///         property: value;
+///     }
+/// ```
+///
+/// @example
+/// @include prefixer("webkit", "moz")
+///
+
+@mixin prefixer($property, $value, $prefixes: "webkit" "moz" "ms" "o") {
+    @each $prefix in $prefixes {
+        -#{$prefix}-#{$property}: $value;
+    }
+    #{$property}: $value;
+}
