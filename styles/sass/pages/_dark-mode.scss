@@ -1,3 +1,5 @@
+@use "../helpers/" as *;
+
 body.dark-mode {
     background: black;
     color: white;
@@ -10,5 +12,8 @@ body.dark-mode {
     }
     .education__card__degree::after {
         border-color: black;
+    }
+    .about__info__image {
+        border: 2px solid $main-color;
     }
 }
