@@ -36,6 +36,7 @@
             font-style: "normal";
             font-weight: $num;
             src: url("#{$link}#{$weight}.#{$format}");
+            font-display: swap;
         }
     }
 }
@@ -68,7 +69,7 @@
 /// @include overlay(black, 0.6)
 ///
 
-@mixin overlay($color: black, $opacity: 0.4) {
+@mixin overlay($color: black, $opacity: 0.5) {
     & {
         position: relative;
     }

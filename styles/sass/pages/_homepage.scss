@@ -7,12 +7,13 @@ section.landing {
     padding: 0;
     margin-bottom: 10px;
     height: calc(100vh - 80px);
-    background-image: url("../images/background.jpg");
-    background-size: 100% 100%;
+    background-image: url("../images/background.webp");
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     @media (max-width: $max-small) {
-        background-image: url("../images/background-portrait.jpg");
+        background-image: url("../images/background-portrait.webp");
     }
     @include overlay();
     .container {
@@ -127,7 +128,8 @@ section.landing {
                 &:not(:last-of-type) {
                     margin-right: 20px;
                 }
-                svg {
+                i {
+                    width: 30px;
                     font-size: 18px;
                     padding: 5px;
                 }
@@ -219,7 +221,7 @@ section.landing {
             &:hover {
                 background-color: $main-color;
             }
-            svg {
+            i {
                 font-size: 3rem;
                 color: white;
             }
@@ -310,7 +312,7 @@ section.landing {
             align-items: center;
             justify-content: center;
             font-weight: $medium;
-            svg {
+            i {
                 color: $main-color;
                 font-size: 18px;
                 margin-right: 3px;

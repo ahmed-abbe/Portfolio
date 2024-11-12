@@ -5,23 +5,43 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" type="image/x-icon" href="images/icon.ico" />
         <title>Ahmed portfolio</title>
+        <meta
+            name="description"
+            content="My portfolio is to show off my skills and some of my projects"
+        />
+        <meta property="og:title" content="Ahmed portfolio" />
+        <meta
+            property="og:description"
+            content="My portfolio is to show off my skills and some of my projects"
+        />
+        <meta property="og:image" content="./images/logo.png" />
         <!-- Render all elements in the page normally -->
         <link rel="stylesheet" href="styles/normalize.css" />
         <!-- Owl carousel library (CSS) -->
         <link rel="stylesheet" href="styles/owl.carousel.min.css" />
         <link rel="stylesheet" href="styles/owl.theme.default.min.css" />
         <!-- Wow library (CSS) -->
-        <link rel="stylesheet" href="styles/wow.css" />
+        <link
+            rel="preload"
+            href="styles/wow.css"
+            as="style"
+            onload="this.onload=null;this.rel='stylesheet'"
+        />
         <!-- Main CSS file -->
         <link rel="stylesheet" href="styles/main.css" />
         <!-- Font Awesome library (CSS) -->
-        <link rel="stylesheet" href="styles/all.min.css" />
+        <link
+            rel="preload"
+            href="styles/all.min.css"
+            as="style"
+            onload="this.onload=null;this.rel='stylesheet'"
+        />
         <!-- Wow library (JS) -->
-        <script src="scripts/wow.min.js"></script>
+        <script src="scripts/wow.min.js" defer></script>
         <script>
-            new WOW().init();
-
             window.addEventListener("load", () => {
+                new WOW().init();
+
                 document.body.classList.remove("loader");
             });
         </script>
@@ -122,7 +142,11 @@
                 </div>
                 <div class="about__info">
                     <div class="about__info__image">
-                        <img src="images/logo.png" alt="logo" />
+                        <img
+                            decoding="async"
+                            src="images/logo.png"
+                            alt="logo"
+                        />
                     </div>
                     <div class="about__info__socials">
                         <a
@@ -262,7 +286,11 @@
             <div class="container">
                 <div class="owl-carousel owl-theme">
                     <figure class="projects__card">
-                        <img src="images/project-1.png" alt="Mediplus" />
+                        <img
+                            decoding="async"
+                            src="images/project-1.webp"
+                            alt="Mediplus"
+                        />
                         <figcaption>
                             <a
                                 href="https://ahmed-abbe.github.io/Template-Six/"
@@ -280,7 +308,11 @@
                         </figcaption>
                     </figure>
                     <figure class="projects__card">
-                        <img src="images/project-2.png" alt="Space tourism" />
+                        <img
+                            decoding="async"
+                            src="images/project-2.webp"
+                            alt="Space tourism"
+                        />
                         <figcaption>
                             <a
                                 href="https://ahmed-abbe.github.io/Space-Toursim/"
@@ -299,7 +331,11 @@
                         </figcaption>
                     </figure>
                     <figure class="projects__card">
-                        <img src="images/project-3.png" alt="Quizzical" />
+                        <img
+                            decoding="async"
+                            src="images/project-3.webp"
+                            alt="Quizzical"
+                        />
                         <figcaption>
                             <a
                                 href="https://ahmed-abbe.github.io/Quizzical/"
@@ -318,7 +354,11 @@
                         </figcaption>
                     </figure>
                     <figure class="projects__card">
-                        <img src="images/project-4.png" alt="Dashboard" />
+                        <img
+                            decoding="async"
+                            src="images/project-4.png"
+                            alt="Dashboard"
+                        />
                         <figcaption>
                             <a
                                 href="https://ahmed-abbe.github.io/Template-Five/"
@@ -348,7 +388,7 @@
                 <div class="contact__info">
                     <div class="name">
                         <h3>Ahmed Gafar</h3>
-                        <a>
+                        <a href="https://wa.me/+201066295454" target="_blank">
                             <i class="fa-solid fa-laptop-code"></i>
                             Front-End Developer
                         </a>
@@ -412,8 +452,6 @@
             <p>Made with <i class="fa-solid fa-heart"></i> by Ahmed</p>
         </footer>
         <!-- End Footer -->
-        <!-- Font Awesome library (JS) -->
-        <script src="scripts/all.min.js"></script>
         <!-- Owl carousel library (JS) & jQuery -->
         <script src="scripts/jquery-3.7.1.min.js"></script>
         <script src="scripts/owl.carousel.min.js"></script>

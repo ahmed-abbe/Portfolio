@@ -24,15 +24,19 @@ navBurger.addEventListener("click", (e) => {
 });
 
 // Add scroll event to the widnow
-window.addEventListener("scroll", () => {
-    // Check if the linkList has active class
-    if (linksList.classList.contains("active")) {
-        // remove active class
-        linksList.classList.remove("active");
+window.addEventListener(
+    "scroll",
+    () => {
+        // Check if the linkList has active class
+        if (linksList.classList.contains("active")) {
+            // remove active class
+            linksList.classList.remove("active");
 
-        navBurger.classList.remove("active");
-    }
-});
+            navBurger.classList.remove("active");
+        }
+    },
+    { passive: true }
+);
 
 const navLinks = document.querySelectorAll(".header__nav__link a");
 const sections = document.querySelectorAll("section");
@@ -70,7 +74,7 @@ function setActiveLink(activeLink) {
 }
 
 // Scroll event listener to update active link as user scrolls
-window.addEventListener("scroll", updateActiveLink);
+window.addEventListener("scroll", updateActiveLink, { passive: true });
 
 // Call on load to set active class if page is loaded in a scrolled state
 updateActiveLink();
