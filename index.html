@@ -14,7 +14,7 @@
             property="og:description"
             content="My portfolio is to show off my skills and some of my projects"
         />
-        <meta property="og:image" content="%PUBLIC_URL%/images/logo.png" />
+        <meta property="og:image" content="https://ahmed-abbe.github.io/Portfolio/images/logo.png" />
         <!-- Render all elements in the page normally -->
         <link rel="stylesheet" href="styles/normalize.css" />
         <!-- Owl carousel library (CSS) -->
@@ -89,7 +89,7 @@
         </header>
         <!-- End Header -->
         <!-- Start Landing Section -->
-        <section class="landing">
+        <section class="landing wow fadeIn">
             <div class="container">
                 <div>
                     <h1>Hi <span>,</span> I Am Ahmed Gafar <span>.</span></h1>
@@ -102,7 +102,7 @@
         </section>
         <!-- End Landing Section -->
         <!-- Start About me Section -->
-        <section class="about wow slideInLeft" id="about">
+        <section class="about wow fadeInLeft" data-wow-duration="1s" data-wow-offset="500" id="about">
             <h1 class="main-heading">About me</h1>
             <div class="container">
                 <div class="about__text">
@@ -178,7 +178,7 @@
         </section>
         <!-- End About me Section -->
         <!-- Start Education Section -->
-        <section class="education wow slideInRight" id="education">
+        <section class="education wow fadeInRight" data-wow-duration="1s" data-wow-offset="200" id="education">
             <h1 class="main-heading">Education</h1>
             <div class="container">
                 <div class="education__card">
@@ -229,8 +229,7 @@
         <!-- End Education Section -->
         <!-- Start Skills Section -->
         <section
-            class="skills wow slideInLeft"
-            data-wow-duration="2s"
+            class="skills wow fadeInDown"
             id="skills"
         >
             <h1 class="main-heading">Skills</h1>
@@ -281,16 +280,19 @@
         </section>
         <!-- End Skills Section -->
         <!-- Start Projects Section -->
-        <section class="projects wow slideInRight" id="projects">
+        <section class="projects wow fadeInUp" data-wow-duration="1s" data-wow-offset="200" id="projects">
             <h1 class="main-heading">projects</h1>
             <div class="container">
                 <div class="owl-carousel owl-theme">
                     <figure class="projects__card">
-                        <img
-                            decoding="async"
-                            src="images/project-1.webp"
-                            alt="Mediplus"
-                        />
+                        <picture>
+                            <source media="(max-width: 576px)" srcset="./images/project-1-mobile.png" />
+                            <img
+                                decoding="async"
+                                src="images/project-1.webp"
+                                alt="Mediplus"
+                            />
+                        </picture>
                         <figcaption>
                             <a
                                 href="https://ahmed-abbe.github.io/Template-Six/"
@@ -308,11 +310,14 @@
                         </figcaption>
                     </figure>
                     <figure class="projects__card">
-                        <img
-                            decoding="async"
-                            src="images/project-2.webp"
-                            alt="Space tourism"
-                        />
+                        <picture>
+                            <source media="(max-width: 576px)" srcset="./images/project-2-mobile.png" />
+                            <img
+                                decoding="async"
+                                src="images/project-2.webp"
+                                alt="Space tourism"
+                            />
+                        </picture>
                         <figcaption>
                             <a
                                 href="https://ahmed-abbe.github.io/Space-Toursim/"
@@ -331,11 +336,14 @@
                         </figcaption>
                     </figure>
                     <figure class="projects__card">
-                        <img
-                            decoding="async"
-                            src="images/project-3.webp"
-                            alt="Quizzical"
-                        />
+                        <picture>
+                            <source media="(max-width: 576px)" srcset="./images/project-3-mobile.png" />
+                            <img
+                                decoding="async"
+                                src="images/project-3.webp"
+                                alt="Quizzical"
+                            />
+                        </picture>
                         <figcaption>
                             <a
                                 href="https://ahmed-abbe.github.io/Quizzical/"
@@ -354,11 +362,14 @@
                         </figcaption>
                     </figure>
                     <figure class="projects__card">
-                        <img
-                            decoding="async"
-                            src="images/project-4.png"
-                            alt="Dashboard"
-                        />
+                        <picture>
+                            <source media="(max-width: 576px)" srcset="./images/project-4-mobile.png" />
+                            <img
+                                decoding="async"
+                                src="images/project-4.png"
+                                alt="Dashboard"
+                            />
+                        </picture>
                         <figcaption>
                             <a
                                 href="https://ahmed-abbe.github.io/Template-Five/"
@@ -379,7 +390,7 @@
         </section>
         <!-- End Projects Section -->
         <!-- Start Contact Me Section -->
-        <section class="contact wow bounceInUp" id="contact">
+        <section class="contact wow bounceInUp" data-wow-duration="1s" data-wow-offset="200" id="contact">
             <h1 class="main-heading">Contact Me</h1>
             <div class="container">
                 <h2 class="contact__heading">
